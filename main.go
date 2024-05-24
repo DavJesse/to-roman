@@ -9,5 +9,11 @@ func main() {
 		printLn("This program only takes one input as an argument")
 		return
 	}
-	printLn(arg)
+	num, err := atoi(arg)
+
+	if err != "" {
+		printLn(err)
+		return
+	}
+	
 }
