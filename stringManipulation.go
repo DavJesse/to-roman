@@ -1,3 +1,5 @@
 package main
 
-func 
+func atoi(str string) int {
+	var result string
+} 
