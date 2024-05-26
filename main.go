@@ -16,4 +16,10 @@ func main() {
 		return
 	}
 	
+	if num >= 4000 {
+		printLn("Connot convert " + arg + " to Roman numerals")
+		printLn("This program has an input limit of 4000")
+	}
+
+
 }
