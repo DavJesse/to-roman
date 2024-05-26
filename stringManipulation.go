@@ -1,10 +1,12 @@
 package main
 
+//Converts string to integer and capture invalid characters
 func atoi(str string) (int, string) {
 	var result int
 	var digit int
 	var errStr string
 
+	//Range over string, finding apppropriate 
 	for i, r := range str {
 		if i == 0 && r == '+' || r == '-' {
 			if r == '-' {

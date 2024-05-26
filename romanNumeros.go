@@ -4,25 +4,27 @@ package main
 var roman = []struct {
 	value  int
 	symbol string
+	calculation string
 }{
-	{1000, "M"},
-	{900, "CM"},
-	{500, "D"},
-	{400, "CD"},
-	{100, "C"},
-	{90, "XC"},
-	{50, "L"},
-	{40, "XL"},
-	{10, "X"},
-	{9, "IX"},
-	{5, "V"},
-	{4, "IV"},
-	{1, "I"},
+	{1000, "M", "M"},
+	{900, "CM", "(C-M)"},
+	{500, "D", "D"},
+	{400, "CD", "(C-D)"},
+	{100, "C", "C"},
+	{90, "XC", "(X-C)"},
+	{50, "L", "L"},
+	{40, "XL", "(X-L)"},
+	{10, "X", "X"},
+	{9, "IX", "(I-X)"},
+	{5, "V", "V"},
+	{4, "IV", "(I-V)"},
+	{1, "I", "I"},
 }
 
 // Converts integers to their respective Roman numerals
-func romanNumeros(num int) string {
+func romanNumeros(num int) (string, string) {
 	var result string
+	var calc string
 
 	//Range over the struct, 'roman'
 	for _, val := range roman {
@@ -33,10 +35,18 @@ func romanNumeros(num int) string {
 			//Add the symbol to result..
 			result += val.symbol
 
+			if calc != "" {
+				calc += "+" + val.calculation
+
+			} else {
+				calc += val.calculation
+			}
+
+
 			//Update number by subtracting the value that matched it
 			num -= val.value
 		}
 	}
 
-	return result
+	return result, calc
 }
