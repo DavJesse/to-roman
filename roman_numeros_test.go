@@ -4,7 +4,7 @@ import "testing"
 
 func TestRomanNumeros(t *testing.T) {
 	testInt := 999
-	got := romanNumeros(testInt)
+	got, _ := romanNumeros(testInt)
 	expected := "CMXCIX"
 
 	if got != expected {

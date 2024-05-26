@@ -2,8 +2,8 @@ package main
 
 // Establish a reference for important Roman numerals
 var roman = []struct {
-	value  int
-	symbol string
+	value       int
+	symbol      string
 	calculation string
 }{
 	{1000, "M", "M"},
@@ -35,13 +35,13 @@ func romanNumeros(num int) (string, string) {
 			//Add the symbol to result..
 			result += val.symbol
 
+			//Capture the method used to calculate the roman numeral
 			if calc != "" {
 				calc += "+" + val.calculation
 
 			} else {
 				calc += val.calculation
 			}
-
 
 			//Update number by subtracting the value that matched it
 			num -= val.value

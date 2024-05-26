@@ -37,7 +37,7 @@ func main() {
 	//Convert the integer contained in argument to roman numerals
 	roman, calculation := romanNumeros(num)
 
-	//Print result of roman conversion
+	//Print results of roman conversion
 	printLn(roman)
 	printLn(calculation)
 
