@@ -4,17 +4,17 @@ func romanNumeros(num int) string {
 	var count int
 	var result string
 
-	if num / 1000 > 0 {
+	if num/1000 > 0 {
 		count = num / 1000
 		num /= 1000
-		
+
 		for count > 0 {
 			result += "M"
 			count--
 		}
 	}
 
-	if num / 100 > 0 {
+	if num/100 > 0 {
 		count = num / 100
 
 		if count == 9 {
@@ -28,7 +28,7 @@ func romanNumeros(num int) string {
 			num -= 500
 			count -= 5
 		}
-		
+
 		for count > 0 {
 			if count == 4 {
 				num -= 400
@@ -39,11 +39,11 @@ func romanNumeros(num int) string {
 
 			num -= 100
 			result += "C"
-			count --
+			count--
 		}
 	}
 
-	if num / 10 > 0 {
+	if num/10 > 0 {
 		count /= 10
 
 		if count == 9 {
@@ -69,7 +69,7 @@ func romanNumeros(num int) string {
 		}
 	}
 
-	if num / 1 > 0 {
+	if num/1 > 0 {
 		count = num / 1
 
 		if count == 9 {
@@ -80,7 +80,21 @@ func romanNumeros(num int) string {
 
 		if count > 5 {
 			count -= 5
-			
+			num -= 5
+			result += "V"
+		}
+
+		for count > 0 {
+			if count == 4 {
+				num -= 4
+				result += "IV"
+				count = 0
+				break
+			}
+
+			num -= 1
+			result += "I"
+			count--
 		}
 	}
 

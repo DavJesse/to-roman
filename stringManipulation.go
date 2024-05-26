@@ -16,7 +16,7 @@ func atoi(str string) (int, string) {
 			errStr = errStr + "\n" + "This program only converts whole numbers to their Roman representation"
 		}
 		digit = int(r - '0')
-		result = result * 10 + digit
+		result = result*10 + digit
 	}
 	return result, errStr
-} 
+}
