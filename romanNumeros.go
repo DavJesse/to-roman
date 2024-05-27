@@ -7,17 +7,17 @@ var roman = []struct {
 	calculation string
 }{
 	{1000, "M", "M"},
-	{900, "CM", "(C-M)"},
+	{900, "CM", "(M-C)"},
 	{500, "D", "D"},
-	{400, "CD", "(C-D)"},
+	{400, "CD", "(D-C)"},
 	{100, "C", "C"},
-	{90, "XC", "(X-C)"},
+	{90, "XC", "(C-X)"},
 	{50, "L", "L"},
-	{40, "XL", "(X-L)"},
+	{40, "XL", "(L-X)"},
 	{10, "X", "X"},
-	{9, "IX", "(I-X)"},
+	{9, "IX", "(X-I)"},
 	{5, "V", "V"},
-	{4, "IV", "(I-V)"},
+	{4, "IV", "(V-I)"},
 	{1, "I", "I"},
 }
 
@@ -26,24 +26,22 @@ func romanNumeros(num int) (string, string) {
 	var result string
 	var calc string
 
-	//Range over the struct, 'roman'
+	// Range over the struct, 'roman'
 	for _, val := range roman {
-
-		//As long as 'num' is greater or equal to the values in the struct...
+		// As long as 'num' is greater or equal to the values in the struct...
 		for num >= val.value {
 
-			//Add the symbol to result..
+			// Add the symbol to result..
 			result += val.symbol
 
-			//Capture the method used to calculate the roman numeral
+			// Capture the method used to calculate the roman numeral
 			if calc != "" {
 				calc += "+" + val.calculation
-
 			} else {
 				calc += val.calculation
 			}
 
-			//Update number by subtracting the value that matched it
+			// Update number by subtracting the value that matched it
 			num -= val.value
 		}
 	}

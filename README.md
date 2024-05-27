@@ -24,4 +24,5 @@ bash
 MMIX
 M+M+(I-X)
 ```
-
+### Requirements
+`to-roman` is a stand-alone program written on go. To run it, you will need to have Golang insalled in your computer
