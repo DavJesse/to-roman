@@ -24,5 +24,15 @@ bash
 MMIX
 M+M+(I-X)
 ```
-### Requirements
+## Requirements
 `to-roman` is a stand-alone program written on go. To run it, you will need to have Golang insalled in your computer
+
+## Contributing to to-roman
+If you encounter any issues or have suggestions for improvements, feel free to contribute to the project. You can submit bug reports or pull requests on the GitHub repository.
+## License
+This project is licensed under the [MIT License](https://en.wikipedia.org/wiki/MIT_License). Feel free to use, modify, and distribute the code for personal or commercial purposes.
+
+## Author
+David Jesse Odhiambo
+
+Apprentice Software Developer, Zone01 Kisumu
